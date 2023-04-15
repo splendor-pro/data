@@ -58,15 +58,15 @@ $adb->pquery($sql7, array($permission, $tabid, $ruleid));
 ## 1.4. PunBB
 PunBB [6] is a typical project that uses the Non-chain Query Model mentioned in our paper. We use this project as a representative demonstration of Splendor's ability to discover read and write locations in this type of database query model.
 
--read model
+- read model
 ```php
 $query = array(
-2 'SELECT' => 'sc.search_data',
-3 'FROM' => 'search_cache AS sc',
-4 'WHERE' => 'sc.id='.$search_id.' AND
-sc.ident=\''.$forum_db->escape($ident).'\''
-5 );
-6 $result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
+  'SELECT' => 'sc.search_data',
+  'FROM' => 'search_cache AS sc',
+  'WHERE' => 'sc.id='.$search_id.' AND
+  sc.ident=\''.$forum_db->escape($ident).'\''
+  );
+$result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
 ```
 
 - write model
@@ -83,11 +83,26 @@ hide_smilies, posted, topic_id',
   $post_info['posted'],
   $post_info['topic_id']
   );
-  $forum_db->query_build($query) or error(__FILE__, __LINE__);
+$forum_db->query_build($query) or error(__FILE__, __LINE__);
 ```
 
 ## 1.5. CatfishCMS
-Catfish
+Catfish is a CMS system developed using ThinkPHP[7], a well-known PHP development framework. The framework is typical of using the Chain Query Model as a database query model.
+
+- read model 
+```php
+$data = ['uid' => Session::get($this->session_prefix.'user_id'),
+         'pid' => Request::instance()->post('pid'),
+         'jname' => Request::instance()->post('name'),
+         'jvalue' => Request::instance()->post('jval'),
+         'times' => $time];
+Db::name('terminal')->insert($data);
+```
+- write model
+```php
+$fields = '*';
+$data = Db::name('terminal')->field($fields)->select();
+```
 
 ## Reference
 [1] Dahse, Johannes and Thorsten Holz. “Static Detection of Second-Order Vulnerabilities in Web Applications.” USENIX Security Symposium (2014).<br>
