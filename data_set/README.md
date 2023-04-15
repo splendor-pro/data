@@ -40,7 +40,7 @@ $sql = "INSERT INTO " . CATEGORIES_TABLE . " (cat_title, cat_order) VALUES ('" .
 
 
 ## 1.3.Corebos
-Corebose is a relatively large CMS project (over a million rows), and we tested this project both to demonstrate the performance of our tools on large projects and to test the ability to find anchor points.
+Corebose is a relatively large CMS project (over a million lines PHP code), and we tested this project both to demonstrate the performance of our tools on large projects and to test the ability to find anchor points.
 
 - read model 
 ```php
