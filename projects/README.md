@@ -4,7 +4,7 @@
 Because the study is to figure out the trend of PHP database query model, we try to select the more representative PHP projects that appear in different time stages.
 We chosen them from three kinds of sources: test projects from related papers of top tier conferences, projects with high Github star numbers (over 1k), and those that appear in some well-known lists.
 
-### Tab1: The projects that access the DB using SQL query statements directly
+### Table 1: The projects that access the DB using SQL query statements directly
 
 | id | name       | year |   locs | source                      |
 |----|------------|------|--------|-----------------------------|
@@ -24,7 +24,7 @@ We chosen them from three kinds of sources: test projects from related papers of
 | 14 | FAQForg    | 2010 |   1040 | paper test case[3]          |
 
 
-### Tab2: The projects that use a DAL
+### Table 2: The projects that use a DAL
 
 | id | name             | year |    locs | source              |
 |----|------------------|------|---------|---------------------|
