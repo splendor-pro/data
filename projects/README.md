@@ -15,7 +15,7 @@ We chosen them from three kinds of sources: test projects from related papers of
 |  5 | HotCRP     | 2013 |  89122 | paper test case[2][7]       |
 |  6 | osCommerce | 2011 |  47533 | paper test case[2][6][7]    |
 |  7 | prestaShop | 2012 |  96145 | paper test case[7]          |
-|  8 | WackoPicko | 2007 |   2510 | paper teset case[7]         |
+|  8 | WackoPicko | 2007 |   2510 | paper test case[7]         |
 |  9 | myBloggie  | 2011 |   6843 | paper test case[3]          |
 | 10 | WebChess   | 2012 |   4690 | paper test case[3]          |
 | 11 | SchoolMate | 2013 |   6549 | paper test case[3]          |
