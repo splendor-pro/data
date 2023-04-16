@@ -53,17 +53,17 @@ The circle dots represent items in Table 1 and the triangle dots represent items
 
 
 ### Reference
-[1] Top 10 Best PHP CMS In 2022: [https://devrims.com/blog/best-php-cms-platforms/](https://www.plesk.com/blog/various/top-10-php-cms-platforms-for-developers-in-2020/)
-[2] Dahse, Johannes and Thorsten Holz. “Simulation of Built-in PHP Features for Precise Static Code Analysis.” Network and Distributed System Security Symposium (2014).
-[3] Alhuzali, Abeer, Rigel Gjomemo, Birhanu Eshete and Venkat Venkatakrishnan. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018).
-[4] Kassar, Feras Al, Giulia Clerici, Luca Compagna, Davide Balzarotti and Fabian Yamaguchi. “Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications.” Proceedings 2022 Network and Distributed System Security Symposium (2022): n. pag.
-[5] Li, Penghui, Wei Meng, Kangjie Lu and Changhua Luo. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” Proceedings of the Web Conference 2021 (2021): n. pag.
-[6] Luo, Changhua, Penghui Li and Wei Meng. “TChecker: Precise Static Inter-Procedural Analysis for Detecting Taint-Style Vulnerabilities in PHP Applications.” Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security (2022): n. pag.
-[7] Eriksson, Benjamin, Giancarlo Pellegrino and Andrei Sabelfeld. “Black Widow: Blackbox Data-driven Web Scanning.” 2021 IEEE Symposium on Security and Privacy (SP) (2021): 1125-1142.
-[8] phpStan: https://github.com/phpstan/phpstan
-[9] Z-Blog: ttps://github.com/zblogcn
-[10] ImpressCMS: https://en.wikipedia.org/wiki/ImpressCMS
-[11] PunBB: https://en.wikipedia.org/wiki/PunBB
+[1] Top 10 Best PHP CMS In 2022: [https://devrims.com/blog/best-php-cms-platforms/](https://www.plesk.com/blog/various/top-10-php-cms-platforms-for-developers-in-2020/) <br>
+[2] Dahse, Johannes and Thorsten Holz. “Simulation of Built-in PHP Features for Precise Static Code Analysis.” Network and Distributed System Security Symposium (2014). <br>
+[3] Alhuzali, Abeer, Rigel Gjomemo, Birhanu Eshete and Venkat Venkatakrishnan. “NAVEX: Precise and Scalable Exploit Generation for Dynamic Web Applications.” USENIX Security Symposium (2018). <br>
+[4] Kassar, Feras Al, Giulia Clerici, Luca Compagna, Davide Balzarotti and Fabian Yamaguchi. “Testability Tarpits: the Impact of Code Patterns on the Security Testing of Web Applications.” Proceedings 2022 Network and Distributed System Security Symposium (2022): n. pag. <br>
+[5] Li, Penghui, Wei Meng, Kangjie Lu and Changhua Luo. “On the Feasibility of Automated Built-in Function Modeling for PHP Symbolic Execution.” Proceedings of the Web Conference 2021 (2021): n. pag. <br>
+[6] Luo, Changhua, Penghui Li and Wei Meng. “TChecker: Precise Static Inter-Procedural Analysis for Detecting Taint-Style Vulnerabilities in PHP Applications.” Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security (2022): n. pag. <br>
+[7] Eriksson, Benjamin, Giancarlo Pellegrino and Andrei Sabelfeld. “Black Widow: Blackbox Data-driven Web Scanning.” 2021 IEEE Symposium on Security and Privacy (SP) (2021): 1125-1142. <br>
+[8] phpStan: https://github.com/phpstan/phpstan <br>
+[9] Z-Blog: ttps://github.com/zblogcn <br>
+[10] ImpressCMS: https://en.wikipedia.org/wiki/ImpressCMS <br>
+[11] PunBB: https://en.wikipedia.org/wiki/PunBB <br>
 
 ## 2. Awesome-CMS for rebuttal
 In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, i.e. to analyze the database query patterns of 45 PHP projects in awesome-cms.
