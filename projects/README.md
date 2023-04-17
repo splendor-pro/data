@@ -502,12 +502,22 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 22. [**Magento**](https://github.com/magento/magento2)
 
     * Read Model
-
-      None
+    
+    ```php
+    //app/code/Magento/User/Model/ResourceModel/User.php
+    $select = $dbh->select()->from($roleTable)
+                ->where('parent_id = :parent_id')
+                ->where('user_type = :user_type')
+                ->where('user_id = :user_id');
+    ```
 
     * Write Model
 
-      None
+      ```php
+      //app/code/Magento/User/Model/ResourceModel/User.php
+      $condition = ['user_id = ?' => (int)$user->getUserId()];
+      $connection->update($this->getMainTable(), $data, $condition);
+      ```
 
       
 
