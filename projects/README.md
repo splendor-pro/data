@@ -876,7 +876,7 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    ​       None
+      None
 
     * Write Model
 
