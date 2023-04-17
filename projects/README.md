@@ -502,14 +502,16 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 22. [**Magento**](https://github.com/magento/magento2)
 
     * Read Model
-    
-    ```php
-    //app/code/Magento/User/Model/ResourceModel/User.php
-    $select = $dbh->select()->from($roleTable)
-                ->where('parent_id = :parent_id')
-                ->where('user_type = :user_type')
-                ->where('user_id = :user_id');
-    ```
+
+      ```php
+      //app/code/Magento/User/Model/ResourceModel/User.php
+      $select = $dbh->select()->from($roleTable)
+                      ->where('parent_id = :parent_id')
+                      ->where('user_type = :user_type')
+                      ->where('user_id = :user_id');
+      ```
+
+      
 
     * Write Model
 
@@ -518,7 +520,7 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       $condition = ['user_id = ?' => (int)$user->getUserId()];
       $connection->update($this->getMainTable(), $data, $condition);
       ```
-
+      
       
 
 23. [**MediaWiki**](https://github.com/wikimedia/mediawiki)
@@ -552,8 +554,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
             ['IGNORE']
             );
       ```
-
-      
 
       
 
