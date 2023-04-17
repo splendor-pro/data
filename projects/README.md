@@ -1,4 +1,6 @@
 # The Popular PHP Applications
+To demonstrate the generality of our method, we first illustrate the prevalence of the 30 projects analyzed in the paper. Then we analyzed the database read/write model of 45 PHP projects in the current popular CMS[(awesome-cms)](https://github.com/postlight/awesome-cms).
+
 
 ## 1. 30 popular PHP CMS
 Because the study is to figure out the trend of PHP database query model, we try to select the more representative PHP projects that appear in different time stages.
@@ -65,7 +67,7 @@ The circle dots represent items in Table 1 and the triangle dots represent items
 [10] ImpressCMS: https://en.wikipedia.org/wiki/ImpressCMS <br>
 [11] PunBB: https://en.wikipedia.org/wiki/PunBB <br>
 
-## 2. Awesome-CMS for rebuttal
+## 2. Awesome-CMS
 In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, to analyze the database query models of 45 PHP projects in [awesome-cms](https://github.com/postlight/awesome-cms). we found that 28 of them can find the database operation triples from the code base.
 
 
