@@ -66,7 +66,9 @@ The circle dots represent items in Table 1 and the triangle dots represent items
 [11] PunBB: https://en.wikipedia.org/wiki/PunBB <br>
 
 ## 2. Awesome-CMS for rebuttal
-In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, to analyze the database query models of 45 PHP projects in awesome-cms. we found that 28 of them can find the database operation triples from the code base.
+In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, to analyze the database query models of 45 PHP projects in awesome-cms. we found that 28 of them can find the database operation triples from the code base.[awesome-cms](https://github.com/postlight/awesome-cms)
+
+
 1. [**Anchor CMS**](https://github.com/anchorcms/anchor-cms)
 
    * Read Model
@@ -75,8 +77,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      //anchor-cms-master/anchor/libraries/auth.php
      User::where('username','=',$username)->where('status','=','active')->fetch();
      ```
-
-     
 
    * Write Model
 
@@ -102,8 +102,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ->first();
      ```
 
-     
-
    * Write Model
 
      ```php
@@ -113,21 +111,15 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
      
 
-3. [**Azuriom[todo]**](https://github.com/Azuriom/Azuriom)
+3. [**Azuriom**](https://github.com/Azuriom/Azuriom)
 
    * Read Model
 
-     ```php
-     
-     ```
-
-     
+     None
 
    * Write Model
 
-     ```php
-     
-     ```
+     None
 
      
 
@@ -142,8 +134,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ->execute()
      ->fetch();
      ```
-
-     
 
    * Write Model
 
@@ -166,8 +156,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      $comments=$post->comments()->orderBy('id','desc')->get();
      ```
 
-     
-
    * Write Model
 
      ```php
@@ -187,8 +175,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      $categorys=Categorys::where('status',1)->get();
      ```
 
-     
-
    * Write Model
 
      ```php
@@ -202,9 +188,7 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
        ]);
      ```
 
-     
-
-     
+        
 
 7. [**Cockpit CMS**](https://github.com/COCOPi/cockpit)
 
@@ -216,8 +200,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
        	 '`WHERE document_criteria("'.$this->database->registerCriteriaFunction($criteria).'",document)';
      $stmt=$conn->query($sql);
      ```
-
-     
 
    * Write Model
 
@@ -240,8 +222,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ->execute($this->intId);
      ```
 
-     
-
    * Write Model
 
      ```php
@@ -261,8 +241,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      //web/modules/contrib/crop/src/CropStorage.php
      $query=$this->database->select('crop_field_data','cfd');
      ```
-
-     
 
    * Write Model
 
@@ -290,8 +268,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
              ['not',['parentId'=>null]],
              ]);
       ```
-
-      
 
     * Write Model
 
@@ -321,8 +297,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ->first();
       ```
 
-      
-
     * Write Model
 
       ```php
@@ -338,15 +312,18 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
     * Read Model
 
       ```php
-      
+      //core/modules/user/src/UserData.php
+      $this->connection->select('users_data', 'ud')
+       ->fields('ud')
+       ->condition('module', $module);
       ```
-
-      
 
     * Write Model
 
       ```php
-      
+      //core/lib/Drupal/Core/Database/Driver/pgsql/Upsert.php
+      $insert = $this->connection->insert($this->table, $this->queryOptions)
+      ->fields($insert_fields);
       ```
 
       
@@ -359,8 +336,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       //system/ee/ExpressionEngine/Addons/channel/upd.channel.php
       ee()->db->select('module_id')->from('modules');
       ```
-
-      
 
     * Write Model
 
@@ -382,9 +357,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-      
+      None
 
     * Write Model
+
+      None
 
       
 
@@ -400,10 +377,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       WHERE us.user_id=?',
       array($userId)
       ```
-
-      
-
-      
 
     * Write Model
 
@@ -422,9 +395,14 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-      
+      ```php
+      //fuel/modules/fuel/models/Fuel_users_model.php
+      $this->db->select('id, email, user_name, first_name, last_name, super_admin, active');
+      ```
 
     * Write Model
+
+      None
 
       
 
@@ -432,9 +410,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-      
+      None
 
     * Write Model
+
+      None
 
       
 
@@ -449,8 +429,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ->from($db->quoteName('#__languages'))
       ->where($db->quoteName('access') . ' = ' . $db->quote('0'));
       ```
-
-      
 
     * Write Model
 
@@ -472,17 +450,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-      ```php
-      
-      ```
-
-      
+      None
 
     * Write Model
 
-      ```php
-      
-      ```
+      None
 
       
 
@@ -500,10 +472,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ->orderBy('t.domain','ASC')
       ->addOrderBy('t.keyword','ASC');
       ```
-
-      
-
-    
 
     * Write Model
 
@@ -523,9 +491,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    
+      None
 
     * Write Model
+
+      None
 
       
 
@@ -533,9 +503,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    
+      None
 
     * Write Model
+
+      None
 
       
 
@@ -553,8 +525,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
                 __METHOD__
                 );
       ```
-
-      
 
     * Write Model
 
@@ -581,9 +551,14 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    
+      ```php
+      //src/MicroweberPackages/User/Http/Controllers/UserProfileController.php
+      $userFind=User::where('id',$userId)->first();
+      ```
 
     * Write Model
+
+      None
 
       
 
@@ -591,9 +566,25 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    
+      ```php
+      //manager/controllers/default/resource/create.class.php
+      
+      $c=$this->modx->newQuery('modActionDom');
+      $c->where(array(
+      'modActionDom.action'=>'resource/create',
+      'modActionDom.name'=>'template',
+      'modActionDom.container'=>'modx-panel-resource',
+      'modActionDom.rule'=>'fieldDefault',
+      'modActionDom.active'=>true,
+      'FCSet.active'=>true,
+      'Profile.active'=>true,
+      ));
+      
+      ```
 
     * Write Model
+
+      None
 
       
 
@@ -601,17 +592,25 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    
+      None
 
     * Write Model
+
+      None
+
+      
 
 27. [**Pagekit**](https://github.com/pagekit/pagekit)
 
     * Read Model
 
-    
+      None
 
     * Write Model
+
+      None
+
+      
 
 28. [**Pimcore Platform**](https://github.com/pimcore/pimcore)
 
@@ -635,25 +634,48 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    
+      ```php
+      //wire/core/WireCache.php
+      $query=$this->wire('database')->prepare("SELECT*FROMcachesWHEREexpires=:expire");
+      $query->execute();
+      ```
 
     * Write Model
+
+      None
+
+      
 
 30. [**PyroCMS**](https://github.com/pyrocms/pyrocms)
 
     * Read Model
 
-    
+      None
 
     * Write Model
+
+      None
+
+      
 
 31. [**REDAXO**](https://github.com/redaxo/redaxo)
 
     * Read Model
 
-    
+      None
 
     * Write Model
+
+      ```php
+      //redaxo/src/addons/backup/update.php
+      
+      rex_sql::factory()
+      ->setTable(rex::getTable('cronjob'))
+      ->setWhere(['type'=>rex_cronjob_export::class])
+      ->setRawValue('parameters','REPLACE(parameters,\'"rex_cronjob_export_blacklist_tables":\',
+      \'"rex_cronjob_export_exclude_tables":\')')
+      ->update();
+      ```
 
       
 
@@ -674,8 +696,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       			->findMany() ? : null;
       	}
       ```
-
-      
 
     * Write Model
 
@@ -705,11 +725,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
                      ])
       ```
 
-      
-
     * Write Model
 
-      none
+      None
 
       
 
@@ -721,8 +739,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       //include/functions_config.inc.php
       $r=serendipity_db_query("SELECT $nameFROM{$serendipity['dbPrefix']} authors WHERE authorid=".(int)$authorid,true);
       ```
-
-    
 
     * Write Model
 
@@ -744,8 +760,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ->sort("\"$tableName\".\"LastEdited\"DESC");
       ```
 
-      
-
     * Write Model
 
       ```php
@@ -765,8 +779,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       $q = "SELECT $col FROM ".safe_pfx($table)." WHERE `$key` = $val LIMIT 1";
       ```
 
-      
-
     * Write Model
 
       ```php
@@ -784,8 +796,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       //core/lib/Thelia/Install/Database.php
       $result = $this->execute('SELECT * FROM `' . $table . '`');
       ```
-
-    
 
     * Write Model
 
@@ -824,11 +834,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-      none
+      None
 
     * Write Model
 
-      none
+      None
 
       
 
@@ -849,8 +859,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ->fetch();
       ```
 
-    
-
     * Write Model
 
       ```php
@@ -868,21 +876,21 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-    ​       none
+    ​       None
 
     * Write Model
 
-      none
+      None
 
 42. [**Winter CMS**](https://github.com/wintercms/winter)
 
     * Read Model
 
-      none
+      None
 
     * Write Model
 
-      none
+      None
 
       
 
@@ -890,11 +898,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
 
     * Read Model
 
-      none
+      None
 
     * Write Model
 
-      none
+      None
 
       
 
@@ -906,8 +914,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       //wp-includes/class-wp-user.php
       $caps = get_user_meta( $this->ID, $this->cap_key, true );
       ```
-
-      
 
     * Write Model
 
@@ -929,15 +935,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ->leftJoinPrefix('u', 'system_usergroup', 'm', 'm.uid = u.uid');
       ```
 
-      
-
     * Write Model
 
       ```php
       //htdocs/include/checklogin.php
       $member_handler->insertUser($user)
       ```
-
-
-
-
