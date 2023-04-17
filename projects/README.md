@@ -67,56 +67,6 @@ The circle dots represent items in Table 1 and the triangle dots represent items
 
 ## 2. Awesome-CMS for rebuttal
 In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, to analyze the database query models of 45 PHP projects in awesome-cms. we found that 28 of them can find the database operation triples from the code base.
-| id   | name                                                         | read model                                                   | write model                                                  |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1    | [**Anchor CMS**](https://github.com/anchorcms/anchor-cms)    | anchor-cms-master/anchor/libraries/auth.php<br>User::where('username','=',\$username)<br>->where('status','=','active')<br>->fetch(); | anchor/libraries/update.php<br>Query::*table*(\$table)<br>->where('key','=','last_update_check')<br>->update(['value'=>\$today]); |
-| 2    | [**AsgardCms**](https://github.com/AsgardCms/Platform)       | Modules/Media/Http/Controllers/Api/MediaController.php<br>DB::*table*('media__imageables')<br>->where('imageable_id',\$request->get('entity_id'))<br>->whereZone(\$request->get('zone'))<br>->whereImageableType(\$request->get('entity'))<br>->first(); | Modules/Media/Http/Controllers/Api/MediaController.php<br>DB::*table*('media__imageables')<br>->whereId(\$id)<br>->update(['order'=>\$order]);<br><br> |
-| 3    | [**Azuriom**](https://github.com/Azuriom/Azuriom)            |                                                              |                                                              |
-| 4    | [**Bolt**](https://github.com/bolt/project)                  | src/Storage/Repository.php<br>\$result=\$qb->where\(\$this->getAlias().'.id=:id')<br>->setParameter('id',\$id)<br>->execute()<br>->fetch(); | src/Storage/Repository.php<br>\$qb->insert(\$this->getTableName());<br>\$querySet->append(\$qb);<br>\$this->persist(\$querySet,$entity,['id']);<br>\$result=\$querySet->execute(); |
-| 5    | [**Bootstrap CMS**](https://github.com/BootstrapCMS/CMS)     | app/Http/Controllers/PostController.php<br>\$comments=\$post->comments()->orderBy('id','desc')->get();<br> | app/Http/Controllers/PostController.php<br>\$post=PostRepository::*find*(\$id);<br>\$post->update(\$input);<br> |
-| 6    | [**Borgert CMS**](https://github.com/odirleiborgert/borgert-cms) | borgert-cms-master/app/Http/Controllers/Blog/SitemapController.php<br>\$categorys=Categorys::where('status',1)->get();<br><br><br><br><br> | borgert-cms-master/app/Http/Controllers/Blog/CommentController.php<br>Comments::create([<br>'post_id'=>\$id,<br>'name'=>\$request->name, <br>'email'=>\$request->email,<br>'description'=>\$request->comment,<br>'status'=>0,<br>]); |
-| 7    | [**Cockpit CMS**](https://github.com/COCOPi/cockpit)         | cockpit-master/lib/MongoLite/Collection.php<br>\$sql='SELECT id,document FROM\`'.<br>\$this->name.'\`WHERE document_criteria("'.<br>\$this->database->registerCriteriaFunction(\$criteria).<br>'",document)';<br>\$stmt=\$conn->query(\$sql); | cockpit-master/lib/MongoLite/Collection.php<br>\$sql="INSERT INTO\`{\$table}\`({\$fields})VALUES({\$values})";<br>\$res=\$this<br>->database<br>->connection<br>->exec(\$sql); |
-| 8    | [**Contao**](https://github.com/contao/core)                 | core-bundle/src/Resources/contao/drivers/DC_Table.php<br>\$objRow=\$this<br>->Database<br>->prepare("SELECT * FROM".$this->strTable."WHEREid=?")<br>->limit(1)<br><br><br> | core-bundle/src/Resources/contao/drivers/DC_Table.php<br>\$objUndoStmt=\$this<br>->Database<br>->prepare("INSERT INTO tl_undo(pid,tstamp,fromTable,query,affectedRows,data)VALUES(?,?,?,?,?,?)")<br>->execute(\$this->User->id,time(),\$this->strTable,<br>'DELETEFROM'.\$this->strTable.'WHEREid='.\$this->intId,<br>\$affected,serialize(\$data)); |
-| 9    | [**Contenta CMS**](https://github.com/contentacms/contenta_jsonapi) | web/modules/contrib/crop/src/CropStorage.php<br>\$query=\$this->database->select('crop_field_data','cfd');<br><br><br> | web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php<br>\$this->database->update(\$table_name)<br>->fields(['deleted'=>1])<br>->condition('bundle',\$field_definition->getTargetBundle())<br>->execute(); |
-| 10   | [**Craft CMS**](https://github.com/craftcms/cms)             | src/services/Assets.php<br>\$query=\$this->_createFolderQuery()<br>->where([<br>'and',<br>['like','path',\$parentFolder->path.'%',false],<br>['volumeId'=>\$parentFolder->volumeId],<br>['not',['parentId'=>null]],<br>]); | src/services/Drafts.php<br>Db::*insert*(Table::DRAFTS,[<br>'sourceId'=>\$sourceId,<br>'creatorId'=>\$creatorId,<br>'name'=>\$name,<br>'notes'=>\$notes,<br>'trackChanges'=>\$trackChanges,<br>],false,\$this->db); |
-| 11   | [**Croogo**](https://github.com/croogo/croogo)               |                                                              |                                                              |
-| 12   | [**Drupal**](https://github.com/drupal/drupal)               |                                                              |                                                              |
-| 13   | [**ExpressionEngine**](https://github.com/ExpressionEngine/ExpressionEngine) |                                                              |                                                              |
-| 14   | [**Flextype**](https://github.com/flextype/flextype)         |                                                              |                                                              |
-| 15   | [**Fork CMS**](https://github.com/forkcms/forkcms)           |                                                              |                                                              |
-| 16   | [**FUEL CMS**](https://github.com/daylightstudio/FUEL-CMS)   |                                                              |                                                              |
-| 17   | [**Grav**](https://github.com/getgrav/grav)                  |                                                              |                                                              |
-| 18   | [**Joomla!**](https://github.com/joomla/joomla-cms)          |                                                              |                                                              |
-| 19   | [**Kirby**](https://github.com/getkirby/starterkit)          |                                                              |                                                              |
-| 20   | [**KunstmaanBundlesCMS**](https://github.com/Kunstmaan/KunstmaanBundlesCMS) |                                                              |                                                              |
-| 21   | [**Lavalite**](https://github.com/LavaLite/cms)              |                                                              |                                                              |
-| 22   | [**Magento**](https://github.com/magento/magento2)           |                                                              |                                                              |
-| 23   | [**MediaWiki**](https://github.com/wikimedia/mediawiki)      |                                                              |                                                              |
-| 24   | [**Microweber**](https://github.com/microweber/microweber)   |                                                              |                                                              |
-| 25   | [**MODX** ](https://github.com/modxcms/revolution)           |                                                              |                                                              |
-| 26   | [**October**](https://github.com/octobercms/october)         |                                                              |                                                              |
-| 27   | [**Pagekit**](https://github.com/pagekit/pagekit)            |                                                              |                                                              |
-| 28   | [**Pimcore Platform**](https://github.com/pimcore/pimcore)   |                                                              |                                                              |
-| 29   | [**Processwire**](https://github.com/processwire/processwire) |                                                              |                                                              |
-| 30   | [**PyroCMS**](https://github.com/pyrocms/pyrocms)            |                                                              |                                                              |
-| 31   | [**REDAXO**](https://github.com/redaxo/redaxo)               |                                                              |                                                              |
-| 32   | [**Redaxscript**](https://github.com/redaxmedia/redaxscript) |                                                              |                                                              |
-| 33   | [**Roadiz**](https://github.com/roadiz/roadiz)               |                                                              |                                                              |
-| 34   | [**Serendipity**](https://github.com/s9y/Serendipity)        |                                                              |                                                              |
-| 35   | [**SilverStripe**](https://github.com/silverstripe/silverstripe-framework) |                                                              |                                                              |
-| 36   | [**Textpattern CMS**](https://github.com/textpattern/textpattern) |                                                              |                                                              |
-| 37   | [**Thelia**](https://github.com/thelia/thelia)               |                                                              |                                                              |
-| 38   | [**Twill**](https://github.com/area17/twill)                 |                                                              |                                                              |
-| 39   | [**TypiCMS**](https://github.com/TypiCMS/Base)               |                                                              |                                                              |
-| 40   | [**TYPO3**](https://github.com/TYPO3/TYPO3.CMS)              |                                                              |                                                              |
-| 41   | [**Unite CMS**](https://github.com/unite-cms/unite-cms)      |                                                              |                                                              |
-| 42   | [**Winter CMS**](https://github.com/wintercms/winter)        |                                                              |                                                              |
-| 43   | [**WonderCMS**](https://github.com/robiso/WonderCMS)         |                                                              |                                                              |
-| 44   | [**WordPress**](https://github.com/WordPress/WordPress)      |                                                              |                                                              |
-| 45   | [**XOOPS**](https://github.com/XOOPS/XoopsCore)              |                                                              |                                                              |
-
-
-
 1. [**Anchor CMS**](https://github.com/anchorcms/anchor-cms)
 
    * Read Model
@@ -133,8 +83,8 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ```php
      //anchor/libraries/update.php
      Query::table($table)
-     			->where('key','=','last_update_check')
-     			->update(['value'=>$today]);
+     ->where('key','=','last_update_check')
+     ->update(['value'=>$today]);
      ```
 
      
@@ -146,10 +96,10 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ```php
      //Modules/Media/Http/Controllers/Api/MediaController.php
      DB::table('media__imageables')
-     		->where('imageable_id',$request->get('entity_id'))
-     		->whereZone($request->get('zone'))
-         ->whereImageableType($request->get('entity'))
-         ->first();
+     ->where('imageable_id',$request->get('entity_id'))
+     ->whereZone($request->get('zone'))
+     ->whereImageableType($request->get('entity'))
+     ->first();
      ```
 
      
@@ -188,9 +138,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ```php
      //src/Storage/Repository.php
      $result=$qb->where($this->getAlias().'.id=:id')
-     					 ->setParameter('id',$id)
-     				   ->execute()
-     					 ->fetch();
+     ->setParameter('id',$id)
+     ->execute()
+     ->fetch();
      ```
 
      
@@ -286,11 +236,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ```php
      //core-bundle/src/Resources/contao/drivers/DC_Table.php
      $objRow=$this->Database->prepare("SELECT * FROM".$this->strTable."WHEREid=?")
-     												->limit(1)
-     												->execute($this->intId);
+     ->limit(1)
+     ->execute($this->intId);
      ```
-
-     
 
      
 
@@ -321,9 +269,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
      ```php
      //web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php
      $this->database->update($table_name)
-          ->fields(['deleted'=>1])
-          ->condition('bundle',$field_definition->getTargetBundle())
-          ->execute();
+     ->fields(['deleted'=>1])
+     ->condition('bundle',$field_definition->getTargetBundle())
+     ->execute();
      ```
 
      
@@ -335,12 +283,12 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //src/services/Assets.php
       $query=$this->_createFolderQuery()
-                  ->where([
-                  'and',
-                  ['like','path',$parentFolder->path.'%',false],
-                  ['volumeId'=>$parentFolder->volumeId],
-                  ['not',['parentId'=>null]],
-                  ]);
+      ->where([
+             'and',
+             ['like','path',$parentFolder->path.'%',false],
+             ['volumeId'=>$parentFolder->volumeId],
+             ['not',['parentId'=>null]],
+             ]);
       ```
 
       
@@ -367,10 +315,10 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //croogo-master/Users/src/Controller/Admin/UsersController.php
       $user=$this->Users
-      					 ->find()
-                 ->where(['username'=>$username])
-                 ->orWhere(['email'=>$username])
-      					 ->first();
+      ->find()
+      ->where(['username'=>$username])
+      ->orWhere(['email'=>$username])
+      ->first();
       ```
 
       
@@ -497,9 +445,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //administrator/components/com_admin/postinstall/languageaccess340.php
       $query = $db->getQuery(true)
-      						->select($db->quoteName('access'))
-      						->from($db->quoteName('#__languages'))
-      						->where($db->quoteName('access') . ' = ' . $db->quote('0'));
+      ->select($db->quoteName('access'))
+      ->from($db->quoteName('#__languages'))
+      ->where($db->quoteName('access') . ' = ' . $db->quote('0'));
       ```
 
       
@@ -509,9 +457,9 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //libraries/legacy/table/menu/type.php
       $query->clear()
-      			->update('#__menu')
-      			->set('menutype='.$this->_db->quote($this->menutype))
-      			->where('menutype='.$this->_db->quote($table->menutype));
+      ->update('#__menu')
+      ->set('menutype='.$this->_db->quote($this->menutype))
+      ->where('menutype='.$this->_db->quote($table->menutype));
       $this->_db->setQuery($query);
       $this->_db->execute();
       ```
@@ -546,11 +494,11 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       //src/Kunstmaan/TranslatorBundle/Repository/TranslationRepository.php
       
       $qb->select('t')
-      	 ->from('KunstmaanTranslatorBundle:Translation','t')
-         ->andWhere('t.status!=:statusstring')
-         ->setParameter('statusstring',Translation::STATUS_DISABLED)
-         ->orderBy('t.domain','ASC')
-         ->addOrderBy('t.keyword','ASC');
+      ->from('KunstmaanTranslatorBundle:Translation','t')
+      ->andWhere('t.status!=:statusstring')
+      ->setParameter('statusstring',Translation::STATUS_DISABLED)
+      ->orderBy('t.domain','ASC')
+      ->addOrderBy('t.keyword','ASC');
       ```
 
       
@@ -563,10 +511,10 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       //src/Kunstmaan/TranslatorBundle/Repository/TranslationRepository.php
       
       $this->createQueryBuilder('t')
-      		 ->update('KunstmaanTranslatorBundle:Translation','t')
-      		 ->set('t.flag','NULL')
-      		 ->getQuery()
-      		 ->execute();
+      ->update('KunstmaanTranslatorBundle:Translation','t')
+      ->set('t.flag','NULL')
+      ->getQuery()
+      ->execute();
       ```
 
       
@@ -748,13 +696,13 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //src/Roadiz/Core/Repositories/LoginAttemptRepository.php
       $qb->select('COUNT(la)')
-                  ->andWhere($qb->expr()->gte('la.blocksLoginUntil', ':now'))
-                  ->andWhere($qb->expr()->eq('la.username', ':username'))
-                  ->getQuery()
-                  ->setParameters([
+      ->andWhere($qb->expr()->gte('la.blocksLoginUntil', ':now'))
+      ->andWhere($qb->expr()->eq('la.username', ':username'))
+      ->getQuery()
+      ->setParameters([
                       'now' =>  new \DateTime('now'),
                       'username' => $username,
-                  ])
+                     ])
       ```
 
       
@@ -792,8 +740,8 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //code/Reports/RecentlyEditedReport.php
       SiteTree::get()
-      				->filter('LastEdited:GreaterThan',date("Y-m-dH:i:s",$threshold))
-      				->sort("\"$tableName\".\"LastEdited\"DESC");
+      ->filter('LastEdited:GreaterThan',date("Y-m-dH:i:s",$threshold))
+      ->sort("\"$tableName\".\"LastEdited\"DESC");
       ```
 
       
@@ -803,7 +751,7 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //code/Search/ContentControllerSearchExtension.php
       FieldList::create(TextField::create('Search',false,$searchText)
-      				 ->setAttribute('placeholder',$placeholder)
+      ->setAttribute('placeholder',$placeholder)
       ```
 
       
@@ -891,14 +839,14 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       // Controller/PageInformationController.php 
       $row = $queryBuilder
-                  ->select('*')
-                  ->from('pages')
-                  ->where(
-                      $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($id, \PDO::PARAM_INT)),
-                      $this->getBackendUser()->getPagePermsClause(Permission::PAGE_SHOW)
-                  )
-                  ->execute()
-                  ->fetch();
+      ->select('*')
+      ->from('pages')
+      ->where(
+               $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($id, \PDO::PARAM_INT)),
+               $this->getBackendUser()->getPagePermsClause(Permission::PAGE_SHOW)
+             )
+      ->execute()
+      ->fetch();
       ```
 
     
@@ -908,10 +856,10 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //Controller/MaintenanceController.php
       GeneralUtility::makeInstance(ConnectionPool::class)
-             ->getQueryBuilderForTable('be_users')
-             ->update('be_users')
-             ->set('uc', '')
-             ->execute();
+      ->getQueryBuilderForTable('be_users')
+      ->update('be_users')
+      ->set('uc', '')
+      ->execute();
       ```
 
       
@@ -977,8 +925,8 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       ```php
       //xoops_lib/Xoops/Core/Kernel/Handlers/XoopsMemberHandler.php
       $qb ->select('DISTINCT ' . ($asobject ? 'u.*' : 'u.uid'))
-                  ->fromPrefix('system_user', 'u')
-                  ->leftJoinPrefix('u', 'system_usergroup', 'm', 'm.uid = u.uid');
+      ->fromPrefix('system_user', 'u')
+      ->leftJoinPrefix('u', 'system_usergroup', 'm', 'm.uid = u.uid');
       ```
 
       
@@ -990,6 +938,6 @@ In order to better illustrate the generality of DAL usage, in the rebuttal we de
       $member_handler->insertUser($user)
       ```
 
-      
+
 
 
