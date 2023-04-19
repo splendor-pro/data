@@ -20,7 +20,7 @@ This is the result presentation of the database operation triples inference in S
   | customers      | customers_firstname,<br>customers_lastname,<br>customers_email_address | catalog/admin/customers.php:154                              | catalog/admin/customers.php:144<br/>catalog/admin/customers.php:692<br>catalog/admin/customers.php:696<br> |
 
 
-## catfish 5.4.0
+## catfishCMS 5.4.0
 
   | Table     | Fields                                       | Write Locs                                                   | Read Locs                                                    |
   | --------- | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
