@@ -7,7 +7,7 @@ Then we show the result of vulnerabilities found in the paper's test cases.
 
 ## osCommerce2-2.3.4.1
 
-| Tainted                                                 | write locs                                                   | read locs                                                    |
+| Tainted                                                 | Write Locs                                                   | Read Locs                                                    |
   | ------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | user(user_name)                                         | oscommerce2-2.3.4.1/catalog/admin/administrators.php:287<br>/Users/he/www/works/oscommerce2-2.3.4.1/catalog/admin/login.php:108 | oscommerce2-2.3.4.1/catalog/admin/administrators.php:287<br>oscommerce2-2.3.4.1/catalog/admin/administrators.php:368 |
   | language(name, code, directory)                         | oscommerce2-2.3.4.1/catalog/admin/languages.php:79<br>oscommerce2-2.3.4.1/catalog/admin/languages.php:26<br><br> | oscommerce2-2.3.4.1/catalog/admin/languages.php:153<br>oscommerce2-2.3.4.1/catalog/admin/languages.php:180<br>oscommerce2-2.3.4.1/catalog/admin/languages.php:244 |
