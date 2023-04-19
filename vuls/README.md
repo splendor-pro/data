@@ -5,18 +5,21 @@ At first, thanks to the ability of static analysis batch scanning, Splendor disc
 CVE-2022-4200, CVE-2022-4199, CVE-2022-4242, CVE-2022-4243, CVE-2022-4256, CVE-2022-4260, CVE-2022-4330).<br>
 Then we show the result of vulnerabilities found in the paper's test cases.
 
-## osCommerce2-2.3.4.1
-
-
-  | Tainted Columns                                         | Write Locs                                                   | Read Locs                                                    |
-  | ------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | user(user_name)                                         | catalog/admin/administrators.php:287<br>catalog/admin/login.php:108 | catalog/admin/administrators.php:287<br>catalog/admin/administrators.php:368 |
-  | language(name, code, directory)                         | catalog/admin/languages.php:79<br>catalog/admin/languages.php:26<br><br> | catalog/admin/languages.php:153<br>catalog/admin/languages.php:180<br>catalog/admin/languages.php:244 |
-  | geo_zones(geo_zone_name, geo_zone_description)          | catalog/admin/geo_zones.php:67                               | catalog/admin/tax_rates.php:92                               |
-  | manufacturers(manufactureers_name, manufacturers_image) | catalog/admin/manufacturers.php:45                           | catalog/admin/manufacturers.php:163<br>catalog/admin/manufacturers.php:163 |
-  | tax_class(tax_class_title, tax_class_description)       | catalog/admin/tax_rates.php:26<br>                           | catalog/admin/tax_rates.php:85<br>catalog/admin/tax_rates.php:169 |
-  | tax_rates(tax_description)                              | catalog/admin/tax_rates.php:38                               | catalog/admin/tax_rates.php:85<br>catalog/admin/tax_rates.php:169 |
-  | product(product_name, product_description)              | catalog/admin/categories.php:320<br>                         | catalog/admin/specials.php:169<br>catalog/admin/reviews.php:144<br>catalog/admin/reviews.php:291<br>catalog/admin/reviews.php:88 |
+## osCommerce
+  | Table          | Fields                                                       | Write Paths                                                  | Read Paths                                                   |
+  | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | geo_zones      | geo_zone_name, geo_zone_description                          | catalog/admin/geo_zones.php:54->67<br>catalog/admin/zones.php:(21,22)->24 | catalog/admin/tax_rates.php:76->94 <br>catalog/admin/geo_zones.php:181->203<br>catalog/admin/geo_zones.php:139->154<br>catalog/admin/zones.php:71->86<br>catalog/admin/customers.php:559->563 |
+  | configurations | configuration_description                                    | catalog/admin/modules.php:15->223<br>catalog/admin/modules.php:15->209 | catalog/admin/configuration.php:76->132 <br>catalog/admin/configuration.php:57->132<br>catalog/includes/modules/payment/sage_pay_direct.php:676 |
+  | manufacturers  | manufacturers_name<br>manufacturers_image<br>manufacturers_url | catalog/admin/manufacturers.php:41->45                       | catalog/admin/manufacturers.php:77->82<br>catalog/admin/manufacturers.php:127->145<br>catalog/admin/languages.php:54 |
+  | languages      | name<br>image<br>directory                                   | catalog/admin/languages.php:(73,75,76)->79<br>catalog/admin/languages.php:(20,22,23)->26 | catalog/admin/languages.php:143->(159,161,214,234)           |
+  | tax_rates      | tax_description                                              | catalog/admin/tax_rates.php:23->26<br>catalog/admin/tax_rates.php:35->38 | catalog/admin/tax_rates.php:76->142                          |
+  | categories     | categories_image                                             | catalog/admin/categories.php:307->359<br>catalog/admin/categories.php:81->84<br> | catalog/admin/categories.php:825->827<br>catalog/admin/categories.php:825->829<br>catalog/admin/categories.php:825->861<br>catalog/admin/categories.php:863<br>catalog/admin/languages.php:36->213 |
+  | reviews        | reviews_description                                          | catalog/product_reviews_write.php:34->54<br>catalog/admin/reviews.php:31->35<br>catalog/admin/reviews.php:30->34 | catalog/admin/reviews.php:128->291<br>catalog/admin/reviews.php:88->291<br>catalog/admin/reviews.php:209->291<br>catalog/admin/reviews.php:827->291<br>catalog/admin/reviews.php:829->291 |
+  | countries      | countries_name                                               | catalog/admin/countries.php:(20,21,22)->25                   | catalog/admin/zones.php:139->153<br>catalog/admin/countries.php:72->(86, 87, 88)<br>catalog/admin/zones.php:71->85 |
+  | user           | user_name                                                    | catalog/admin/administrators.php:54->60<br>catalog/admin/administrators.php:102->124<br>catalog/admin/login.php:104->108 | catalog/admin/administrators.php:262->292<br>catalog/admin/administrators.php:181->368<br>catalog/admin/administrators.php:105->158<br>catalog/admin/login.php:39->181 |
+  | tax_classes    | tax_class_title, tax_class_description                       | catalog/admin/tax_classes.php:(20,21)->32<br>catalog/admin/tax_classes.php:(20, 21)23 | catalog/admin/tax_classes.php:67->81<br>catalog/admin/tax_rates.php:76->91 |
+  | products       | products_name,<br>products_image                             | catalog/admin/categories.php:352->354<br>catalog/admin/categories.php:357->359 | catalog/admin/categories.php:307->1060<br/>catalog/admin/categories.php:346->1060<br>catalog/admin/categories.php:352->1060<br/>catalog/admin/categories.php:357->1060<br>catalog/admin/categories.php:861->1060<br>catalog/admin/categories.php:863->1060<br>catalog/admin/specials.php:157->(217, 221)<br>catalog/admin/specials.php:162->(217, 221)<br>catalog/admin/specials.php:95->(217, 221)<br>catalog/admin/languages.php:36->244 |
+  | customers      | customers_firstname,<br>customers_lastname,<br>customers_email_address | catalog/admin/customers.php:(24,25,26,27,28,29)->154         | catalog/admin/customers.php:144->776<br/>catalog/admin/customers.php:692->776<br>catalog/admin/customers.php:696->776<br> |
 
 
 ## catfishCMS 5.4.0
