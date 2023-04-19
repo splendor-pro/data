@@ -7,16 +7,16 @@ Then we show the result of vulnerabilities found in the paper's test cases.
 
 ## osCommerce
 
+  
   | Tainted Columns                                         | Write Paths                                                  | Read Paths                                                   |
   | ------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | user(user_name)                                         | catalog/admin/administrators.php:287<br>catalog/admin/login.php:108 | catalog/admin/administrators.php:287<br>catalog/admin/administrators.php:368 |
-  | language(name, code, directory)                         | catalog/admin/languages.php:79<br>catalog/admin/languages.php:26<br><br> | catalog/admin/languages.php:153<br>catalog/admin/languages.php:180<br>catalog/admin/languages.php:244 |
-  | geo_zones(geo_zone_name, geo_zone_description)          | catalog/admin/geo_zones.php:67                               | catalog/admin/tax_rates.php:92                               |
-  | manufacturers(manufactureers_name, manufacturers_image) | catalog/admin/manufacturers.php:45                           | catalog/admin/manufacturers.php:163<br>catalog/admin/manufacturers.php:163 |
-  | tax_class(tax_class_title, tax_class_description)       | catalog/admin/tax_rates.php:26<br>                           | catalog/admin/tax_rates.php:85<br>catalog/admin/tax_rates.php:169 |
-  | tax_rates(tax_description)                              | catalog/admin/tax_rates.php:38                               | catalog/admin/tax_rates.php:85<br>catalog/admin/tax_rates.php:169 |
-  | product(product_name, product_description)              | catalog/admin/categories.php:320<br>                         | catalog/admin/specials.php:169<br>catalog/admin/reviews.php:144<br>catalog/admin/reviews.php:291<br>catalog/admin/reviews.php:88 |
-
+  | user(user_name)                                         | catalog/admin/administrators.php:102->124<br>catalog/admin/login.php:104->108 | catalog/admin/administrators.php:262->292<br>catalog/admin/administrators.php:262->327 |
+  | language(name, code, directory)                         | catalog/admin/languages.php:(73,75,76)->79<br>catalog/admin/languages.php:(20,22,23)->26<br><br> | catalog/admin/languages.php:143->153<br>catalog/admin/languages.php:143->180<br>catalog/admin/languages.php:143->244 |
+  | geo_zones(geo_zone_name, geo_zone_description)          | catalog/admin/geo_zones.php:(54,55)->67                      | catalog/admin/tax_rates.php:76->92                           |
+  | manufacturers(manufactureers_name, manufacturers_image) | catalog/admin/manufacturers.php:41->45                       | catalog/admin/manufacturers.php:127->163                     |
+  | tax_class(tax_class_title, tax_class_description)       | catalog/admin/tax_rates.php:(22,23)->26                      | catalog/admin/tax_rates.php:76->85<br>catalog/admin/tax_rates.php:76->169 |
+  | tax_rates(tax_description)                              | catalog/admin/tax_rates.php:(34,35)->38                      | catalog/admin/tax_rates.php:76->85<br>catalog/admin/tax_rates.php:76->169 |
+  | product(product_name, product_description)              | catalog/admin/categories.php:347->349<br>                    | catalog/admin/specials.php:157->169<br>catalog/admin/reviews.php:66->144<br>catalog/admin/reviews.php:66->291<br>catalog/admin/reviews.php:66->88 |
 
 
 
