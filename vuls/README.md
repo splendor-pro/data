@@ -1,13 +1,14 @@
 # Vulnerability Scan
+
 The results of Splendor's vulnerability discovery are shown here. 
 At first, thanks to the ability of static analysis batch scanning, Splendor discovered 17 stored XSS 0day vulnerabilities in this process.
 (CVE-2022-2050, CVE-2022-2114, CVE-2022-2194, CVE-2022-2384, CVE-2022-4042, CVE-2022-4110, CVE-2022-4113, CVE-2022-4115, CVE-2022-4119, CVE-2022-4142,
 CVE-2022-4200, CVE-2022-4199, CVE-2022-4242, CVE-2022-4243, CVE-2022-4256, CVE-2022-4260, CVE-2022-4330).<br>
 Then we show the result of vulnerabilities found in the paper's test cases.
 
-## osCommerce
 
-  
+## osCommerce2
+
   | Tainted Columns                                         | Write Paths                                                  | Read Paths                                                   |
   | ------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | user(user_name)                                         | catalog/admin/administrators.php:102->124<br>catalog/admin/login.php:104->108 | catalog/admin/administrators.php:262->292<br>catalog/admin/administrators.php:262->327 |
@@ -17,8 +18,7 @@ Then we show the result of vulnerabilities found in the paper's test cases.
   | tax_class(tax_class_title, tax_class_description)       | catalog/admin/tax_rates.php:(22,23)->26                      | catalog/admin/tax_rates.php:76->85<br>catalog/admin/tax_rates.php:76->169 |
   | tax_rates(tax_description)                              | catalog/admin/tax_rates.php:(34,35)->38                      | catalog/admin/tax_rates.php:76->85<br>catalog/admin/tax_rates.php:76->169 |
   | product(product_name, product_description)              | catalog/admin/categories.php:347->349<br>                    | catalog/admin/specials.php:157->169<br>catalog/admin/reviews.php:66->144<br>catalog/admin/reviews.php:66->291<br>catalog/admin/reviews.php:66->88 |
-
-
+  
 
 ## catfishCMS
 
@@ -32,5 +32,17 @@ Then we show the result of vulnerabilities found in the paper's test cases.
   | (posts) zouzhe, bianji, thumbnail, fujian, fujianurl | catfish_cpg/application/admin/controller/Index.php:654->655  | catfish_cpg/application/index/controller/Index.php:705->745<br>catfish_cpg/application/admin/controller/Index.php:572->586<br>catfish_cpg/application/index/controller/Index.php:1211->1249<br>catfish_cpg/application/index/controller/Index.php:1211->1247<br>catfish_cpg/application/index/controller/Common.php:502->514<br>catfish_cpg/application/index/controller/Common.php:519->536<br>catfish_cpg/application/index/controller/Common.php:596->607<br>catfish_cpg/application/index/controller/Index.php:746->786<br>catfish_cpg/application/index/controller/Index.php:157->168<br>catfish_cpg/application/index/controller/Common.php:541->558<br>catfish_cpg/application/admin/controller/Index.php:572->586<br>catfish_cpg/application/index/controller/Index.php:419->592<br>catfish_cpg/application/index/controller/Common.php:485->498<br>catfish_cpg/application/index/controller/Common.php:485->497<br>catfish_cpg/application/admin/controller/Index.php:1081->1092<br>catfish_cpg/application/index/controller/Index.php:1432->1441 |
   | (links)tuibiao, link_target                          | catfish_cpg/application/admin/controller/Index.php:1467->1468 | catfish_cpg/application/index/controller/Index.php:172->183<br>catfish_cpg/application/index/controller/Common.php:1261->1264<br>catfish_cpg/application/index/controller/Common.php:1245->1257 |
   | posts(target, href)                                  | catfish_cpg/application/admin/controller/Index.php:987->988  | catfish_cpg/application/index/controller/Index.php:705->745<br>catfish_cpg/application/admin/controller/Index.php:572->586<br>catfish_cpg/application/index/controller/Index.php:1211->1249<br>catfish_cpg/application/index/controller/Index.php:1211->1247<br>catfish_cpg/application/admin/controller/Index.php:2093->2102<br>catfish_cpg/application/index/controller/Common.php:502->514<br>catfish_cpg/application/index/controller/Common.php:519->536<br>catfish_cpg/application/index/controller/Common.php:596->607<br>catfish_cpg/application/index/controller/Index.php:746->786<br>catfish_cpg/application/index/controller/Index.php:157->168<br>catfish_cpg/application/index/controller/Common.php:541->558<br>catfish_cpg/application/admin/controller/Index.php:(557,572)->586<br>catfish_cpg/application/index/controller/Index.php:419->592<br>catfish_cpg/application/index/controller/Common.php:485->498<br>catfish_cpg/application/index/controller/Common.php:485->497<br>catfish_cpg/application/admin/controller/Index.php:1081->1092<br>catfish_cpg/application/index/controller/Index.php:1432->1441 |
-  |                                                      |                                                              |                                                              |
-  
+
+
+## punBB
+
+| Table        | Fields                           | Write Locs                                                | Read Locs                                                    |
+| ------------ | -------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------ |
+| users        | email, language, registration_ip | include/functions.php:1852                                |                                                              |
+| posts        | message                          | include/functions.php:2321<br/>include/functions.php:2113 | delete.php:31<br/>post.php:566<br/>moderate.php:504<br/>extern.php:335 |
+| config       | conf_value                       | admin/db_update.php:943<br>include/common_admin.php:199   |                                                              |
+| topics       | last_poster                      | include/functions.php:2089                                |                                                              |
+| reports      | message                          | misc.php:465                                              | admin/reports.php:78<br>admin/db_update.php:1580<br>admin/reports.php:167 |
+| search_cache | search_data                      | include/search_functions.php:275                          |                                                              |
+
+
