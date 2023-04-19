@@ -36,13 +36,6 @@ Then we show the result of vulnerabilities found in the paper's test cases.
 
 ## punBB
 
-| Table        | Fields                           | Write Locs                                                | Read Locs                                                    |
-| ------------ | -------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------ |
-| users        | email, language, registration_ip | include/functions.php:1852                                |                                                              |
-| posts        | message                          | include/functions.php:2321<br/>include/functions.php:2113 | delete.php:31<br/>post.php:566<br/>moderate.php:504<br/>extern.php:335 |
-| config       | conf_value                       | admin/db_update.php:943<br>include/common_admin.php:199   |                                                              |
-| topics       | last_poster                      | include/functions.php:2089                                |                                                              |
-| reports      | message                          | misc.php:465                                              | admin/reports.php:78<br>admin/db_update.php:1580<br>admin/reports.php:167 |
-| search_cache | search_data                      | include/search_functions.php:275                          |                                                              |
-
-
+ | Tainted Columns | Source Paths                                                 | Sink Paths                                                   |
+  | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | posts(message)  | include/functions.php:2307->2316<br>include/functions.php:2075->2108 | delete.php:31->204<br>post.php:566->273<br>moderate.php:504->606<br>extern.php:335->387<br> |
