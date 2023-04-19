@@ -4,7 +4,7 @@ This is the result presentation of the database operation triples inference in S
 ## osCommerce2-2.3.4.1
 
 
-  | table          | Fields                                                       | write locs                                                   | read locs                                                    |
+  | Table          | Fields                                                       | Write Locs                                                   | Read Locs                                                    |
   | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | geo_zones      | geo_zone_name, geo_zone_description                          | catalog/admin/geo_zones.php:67<br>catalog/admin/zones.php:24 | catalog/admin/tax_rates.php:76 <br>catalog/admin/geo_zones.php:181<br>catalog/admin/geo_zones.php:139<br>catalog/admin/zones.php:71<br>catalog/admin/customers.php:559 |
   | configurations | configuration_description                                    | catalog/admin/geo_zones.php:198<br>catalog/admin/modules.php:223<br>catalog/includes/modules/payment/sofortueberweisung_direct.php:591<br>catalog/includes/modules/payment/sofortueberweisung_direct.php:592<br>catalog/admin/modules.php:7 | catalog/admin/configuration.php:84 <br>catalog/admin/configuration.php:13<br>catalog/includes/modules/payment/sage_pay_direct.php:676<br/>catalog/includes/modules/shipping/table.php:95<br/>catalog/includes/modules/shipping/table.php:96<br/>catalog/includes/modules/shipping/table.php:97<br/> |
@@ -18,4 +18,3 @@ This is the result presentation of the database operation triples inference in S
   | tax_classes    | tax_class_title, tax_class_description                       | catalog/admin/tax_classes.php:32<br>catalog/admin/tax_classes.php:23 | catalog/admin/tax_classes.php:67<br>catalog/admin/tax_rates.php:76 |
   | products       | products_name,<br>products_image                             | catalog/admin/categories.php:354<br>catalog/admin/categories.php:359 | catalog/admin/categories.php:307<br/>catalog/admin/categories.php:346<br>catalog/admin/categories.php:352<br/>catalog/admin/categories.php:357<br>catalog/admin/categories.php:861<br>catalog/admin/categories.php:863<br>catalog/admin/specials.php:157<br>catalog/admin/specials.php:162<br>catalog/admin/specials.php:95 |
   | customers      | customers_firstname,<br>customers_lastname,<br>customers_email_address | catalog/admin/customers.php:154                              | catalog/admin/customers.php:144<br/>catalog/admin/customers.php:692<br>catalog/admin/customers.php:696<br> |
-
