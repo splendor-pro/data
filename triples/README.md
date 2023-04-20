@@ -45,5 +45,15 @@ This is the result presentation of the database operation triples inference in S
 | config       | conf_value                       | admin/db_update.php:943<br>include/common_admin.php:199   |                                                              |
 | topics       | last_poster                      | include/functions.php:2089                                |                                                              |
 | reports      | message                          | misc.php:465                                              | admin/reports.php:78<br>admin/db_update.php:1580<br>admin/reports.php:167 |
-| search_cache | search_data                      | include/search_functions.php:275                          |                                                              |
+| search_cache | search_data                      | include/search_functions.php:275                          |          |
+
+
+## phpbb
+
+  | Table  | Fields        | Write Locs                                                   | Read Locs                                                    |
+  | ------ | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | themes | template_name | admin/admin_styles.php:211<br>admin/admin_styles.php:210     | admin/admin_styles.php:893<br>admin/admin_styles.php:502<br>admin/admin_styles.php:712<br>admin/admin_styles.php:896<br>admin/admin_styles.php:524<br>admin/admin_styles.php:505 |
+  | users  | username      | admin/admin_users.php:663<br>admin/admin_users.php:656       | cpg/login.php:63<br>includes/usercp_activate.php:33<br>index.php:228<br>includes/functions_search.php:444<br>viewonline.php:87<br>includes/topic_review.php:113<br>posting.php:490<br>admin/index.php:33<br>privmsg.php:238<br>groupcp.php:1219<br>groupcp.php:785<br>groupcp.php:498<br>groupcp.php:273<br>groupcp.php:818<br>groupcp.php:802 |
+  | posts  | post_text     | includes/functions_post.php:249                              | modcp.php:861<br>viewtopic.php:398<br>includes/topic_review.php:113 |
+  | groups | group_name    | develop/benchmark.php:410<br>develop/benchmark.php:406<br>includes/usercp_register.php:652<br>admin/admin_groups.php:332<br>admin/admin_groups.php:345<br>admin/admin_users.php:663 | admin/admin_groups.php:375<br>admin/admin_groups.php:77<br>viewforum.php:220 |
 
