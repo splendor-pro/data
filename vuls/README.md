@@ -46,5 +46,13 @@ Then we show the result of vulnerabilities found in the paper's test cases.
 | --------------------- | ------------------------------------------------------------ | ------------------------------- |
 | themes(template_name) | admin/admin_styles.php:211->450                              | admin/admin_styles.php:893->921 |
 | themes(style_name)    | admin/admin_styles.php:210->450                              | admin/admin_styles.php:502->575 |
-| users(username)       | admin/admin_users.php:216->663<br>admin/admin_users.php:216->656 | index.php:228->434              |
+| users(username)       | admin/admin_users.php:216->663<br>admin/admin_users.php:216->656 | index.php:228->434          |
+
+
+## corebos
+
+| Tainted Columns                             | Source Paths                                | Sink Paths                                  |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| vtiger_campaignrelstatus(campaignrelstatus) | modules/PickList/PickListAction.php:24->38  | modules/PickList/PickListUtils.php:295->314 |
+| vtiger_campaignrelstatus(campaignrelstatus) | modules/PickList/PickListAction.php:55->102 | modules/PickList/PickListUtils.php:295->314 |
 
