@@ -39,3 +39,12 @@ Then we show the result of vulnerabilities found in the paper's test cases.
  | Tainted Columns | Source Paths                                                 | Sink Paths                                                   |
   | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | posts(message)  | include/functions.php:2307->2316<br>include/functions.php:2075->2108 | delete.php:31->204<br>post.php:566->273<br>moderate.php:504->606<br>extern.php:335->387<br> |
+
+## phpbb
+
+| Tainted Columns       | Source Paths                                                 | Sink Paths                      |
+| --------------------- | ------------------------------------------------------------ | ------------------------------- |
+| themes(template_name) | admin/admin_styles.php:211->450                              | admin/admin_styles.php:893->921 |
+| themes(style_name)    | admin/admin_styles.php:210->450                              | admin/admin_styles.php:502->575 |
+| users(username)       | admin/admin_users.php:216->663<br>admin/admin_users.php:216->656 | index.php:228->434              |
+
