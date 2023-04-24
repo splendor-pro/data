@@ -1,5 +1,5 @@
 # The information of our test cases
-We will describe here in detail of the two test datasets that Splendor evaluated during the evolution section.
+We will describe in detail here the two test datasets that Splendor evaluated in the evaluation section.
 
 # 1. The first data set 
 The purpose of the first dataset is to test the precision of Splendor to find vulnerabilities in target programs with different coding styles. We selected five test cases for testing, which are introduced in the following.
