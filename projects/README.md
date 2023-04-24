@@ -10,38 +10,38 @@ We chosen them from three kinds of sources: test projects from related papers of
 
 | id | name       | year |   locs | source                      |
 |----|------------|------|--------|-----------------------------|
-|  1 | Collabtive | 2013 |  28721 | paper test case[5][6]       |
+|  1 | Collabtive | 2013 |  28721 | test project in paper[5][6]       |
 |  2 | ImpressCMS | 2008 | 506359 | wiki[10]                    |
-|  3 | phpBB      | 2016 | 245873 | paper test case[2][3][6][7] |
-|  4 | WeBid      | 2013 |  35872 | paper test case[3][6]       |
-|  5 | HotCRP     | 2013 |  89122 | paper test case[2][7]       |
-|  6 | osCommerce | 2011 |  47533 | paper test case[2][6][7]    |
-|  7 | prestaShop | 2012 |  96145 | paper test case[7]          |
-|  8 | WackoPicko | 2007 |   2510 | paper test case[7]         |
-|  9 | myBloggie  | 2011 |   6843 | paper test case[3]          |
-| 10 | WebChess   | 2012 |   4690 | paper test case[3]          |
-| 11 | SchoolMate | 2013 |   6549 | paper test case[3]          |
-| 12 | Zen-Cart   | 2011 | 193336 | paper test case[5][6]       |
-| 13 | OpenConf   | 2009 |  22190 | paper test case[3]          |
-| 14 | FAQForg    | 2010 |   1040 | paper test case[3]          |
+|  3 | phpBB      | 2016 | 245873 | test project in paper[2][3][6][7] |
+|  4 | WeBid      | 2013 |  35872 | test project in paper[3][6]       |
+|  5 | HotCRP     | 2013 |  89122 | test project in paper[2][7]       |
+|  6 | osCommerce | 2011 |  47533 | test project in paper[2][6][7]    |
+|  7 | prestaShop | 2012 |  96145 | test project in paper[7]          |
+|  8 | WackoPicko | 2007 |   2510 | test project in paper[7]         |
+|  9 | myBloggie  | 2011 |   6843 | test project in paper[3]          |
+| 10 | WebChess   | 2012 |   4690 | test project in paper[3]          |
+| 11 | SchoolMate | 2013 |   6549 | test project in paper[3]          |
+| 12 | Zen-Cart   | 2011 | 193336 | test project in paper[5][6]       |
+| 13 | OpenConf   | 2009 |  22190 | test project in paper[3]          |
+| 14 | FAQForg    | 2010 |   1040 | test project in paper[3]          |
 
 
 ### Table 2: The projects that use a DAL
 
 | id | name             | year |    locs | source              |
 |----|------------------|------|---------|---------------------|
-| 15 | MantisBT         | 2011 |   73979 | paper test case[4]  |
-| 16 | myBB             | 2012 |  135089 | paper test case[2]  |
+| 15 | MantisBT         | 2011 |   73979 | test project in paper[4]  |
+| 16 | myBB             | 2012 |  135089 | test project in paper[2]  |
 | 17 | punBB            | 2011 |   31864 | wiki[11]            |
 | 18 | Drupal           | 2011 |  815734 | 2022 top10 CMS[1]   |
 | 19 | Joomla           | 2011 |  322897 | 2022 top10 CMS[1]   |
-| 20 | Vanilla          | 2010 |  149873 | paper test case[7]  |
-| 21 | Gallery          | 2011 |   26945 | paper test case[5]  |
+| 20 | Vanilla          | 2010 |  149873 | test project in paper[7]  |
+| 21 | Gallery          | 2011 |   26945 | test project in paper[5]  |
 | 22 | phpStan          | 2016 |  261254 | Github high star[8] |
-| 23 | Monstra          | 2013 |   27531 | paper test case[6]  |
-| 24 | Codiad           | 2003 |    7489 | paper test case[6]  |
+| 23 | Monstra          | 2013 |   27531 | test project in paper[6]  |
+| 24 | Codiad           | 2003 |    7489 | test project in paper[6]  |
 | 25 | ExpressionEngine | 2019 | 3085020 | 2022 top10 CMS[1]   |
-| 26 | Elgg             | 2017 |  617225 | paper test case[5]  |
+| 26 | Elgg             | 2017 |  617225 | test project in paper[5]  |
 | 27 | octoberCMS       | 2012 |   87572 | 2022 top10 CMS[1]   |
 | 28 | Z-Blog           | 2015 |   45436 | Github high star[9] |
 | 29 | CraftCMS         | 2013 |  815734 | 2022 top10 CMS[1]   |
