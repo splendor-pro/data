@@ -2,7 +2,7 @@
 We will describe in detail here the two test datasets that Splendor evaluated in the evaluation section.
 
 # 1. The first data set 
-The purpose of the first dataset is to test the precision of Splendor to find vulnerabilities in target programs with different coding styles. We selected five test cases for testing, which are introduced in the following.
+The purpose of the first dataset is to test the precision of Splendor in finding vulnerabilities in target programs with different coding styles. We selected five test cases for testing, which are introduced in the following.
 
 ## 1.1. osCommerce
 We chose osCommerce[3] 2.3.3.4 for testing because it is the most effective test project for RIPS[1] work (61% of the vulnerabilities discovered by RIPS come from this project). This project uses the direct query database query model which can analyze the database read and write locations by string analysis directly.
