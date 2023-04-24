@@ -68,7 +68,7 @@ The circle dots represent items in Table 1 and the triangle dots represent items
 [11] PunBB: https://en.wikipedia.org/wiki/PunBB <br>
 
 ## 2. Awesome-CMS
-In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, to analyze the database query models of 45 PHP projects in [awesome-cms](https://github.com/postlight/awesome-cms). we found that 28 of them can find the database operation triples from the code base.
+In order to better illustrate the generality of DAL usage, in the rebuttal we decided to include a new dataset, to analyze the database query models of 45 PHP projects in [awesome-cms](https://github.com/postlight/awesome-cms). We found that we can find database operation triples in 28 of these projects.
 
 
 1. [**Anchor CMS**](https://github.com/anchorcms/anchor-cms)
